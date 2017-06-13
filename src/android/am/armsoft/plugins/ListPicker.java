@@ -18,7 +18,6 @@ import org.apache.cordova.PluginResult;
 /**
  * This class provides a service.
  */
-public static final class R.string;
 
 public class ListPicker extends CordovaPlugin {
 
@@ -50,7 +49,8 @@ public class ListPicker extends CordovaPlugin {
     // --------------------------------------------------------------------------
     
     public void showPicker(final JSONArray data, final CallbackContext callbackContext) throws JSONException {
-    
+        
+
         final CordovaInterface cordova = this.cordova;
         
         final JSONObject options = data.getJSONObject(0);
@@ -92,12 +92,12 @@ public class ListPicker extends CordovaPlugin {
                         }
                     }
                 });
-                builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener(){
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                     }
                 });
-                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener(){
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                     }
