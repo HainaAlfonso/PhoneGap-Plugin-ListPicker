@@ -86,7 +86,8 @@ public class ListPicker extends CordovaPlugin {
                         try {
                             final JSONObject selectedItem = items.getJSONObject(index);
                             final String selectedValue = selectedItem.getString("value");
-                            MediaPlayer player = MediaPlayer.create(cordova.getactivity().getapplicationcontext(), "res/" + selectedValue + ".wav " );
+                            final String path = "res/" + selectedValue + ".wav ";
+                            MediaPlayer player = MediaPlayer.create(cordova.getactivity().getapplicationcontext(), path );
                             player.start();
                         }
                         catch (JSONException e) {
