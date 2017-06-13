@@ -15,6 +15,8 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.PluginResult;
 
+import am.armsoft.plugins.R;
+
 /**
  * This class provides a service.
  */
