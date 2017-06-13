@@ -77,7 +77,6 @@ public class ListPicker extends CordovaPlugin {
                 
                 // Set dialog properties
                 builder.setTitle(title);
-                builder.setCancelable(true);
                 builder.setSingleChoiceItems(texts, selectedIndex, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int index) {
                         try {
@@ -91,11 +90,16 @@ public class ListPicker extends CordovaPlugin {
                         }
                     }
                 });
-                builder.setOnCancelListener(new  DialogInterface.OnCancelListener() { 
-                    public void onCancel(DialogInterface dialog) { 
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
-                    } 
-                }); 
+                builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
                 
                 // Show alert dialog
                 AlertDialog alert = builder.create();
