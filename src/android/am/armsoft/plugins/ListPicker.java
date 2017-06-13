@@ -83,7 +83,7 @@ public class ListPicker extends CordovaPlugin {
                         try {
                             final JSONObject selectedItem = items.getJSONObject(index);
                             final String selectedValue = selectedItem.getString("value");
-                            dialog.dismiss();
+                            //dialog.dismiss();
                             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, selectedValue));
                         }
                         catch (JSONException e) {
