@@ -9,6 +9,8 @@ import org.json.JSONException;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
+
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -84,8 +86,8 @@ public class ListPicker extends CordovaPlugin {
                         try {
                             final JSONObject selectedItem = items.getJSONObject(index);
                             final String selectedValue = selectedItem.getString("value");
-                            //dialog.dismiss();
-                            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, selectedValue));
+                            MediaPlayer player = MediaPlayer.create(this, R.raw.selectedValue);
+                            player.start();
                         }
                         catch (JSONException e) {
                             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
